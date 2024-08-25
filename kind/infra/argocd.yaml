@@ -11,9 +11,15 @@ spec:
     chart: argo/argo-cd
     helm:
       values: |
-        url: https://argocd.kind.local
+        server:
+          ingress:
+            ingressClassName: nginx
+            enabled: true
+        global:
+          domain: argocd.kind.local
         configs:
           cm:
+            url: https://argocd.kind.local
             statusbadge: enabled
             exec: enabled
         
@@ -32,21 +38,3 @@ spec:
             namespace: argocd
 
 
-configs:
-  cm:
-    exec: enabled
-    statusbadge: enabled
-
-  repositories:
-    openstack-helm:
-      url: https://github.com/openstack-argocd/openstack-helm-argocd.git
-    openstack-helm-infra:
-      url: https://github.com/openstack/openstack-helm-infra.git     
-    openstack-argocd:
-      url: https://github.com/openstack-argocd/openstack-argocd.git
-    configs:
-      url: https://github.com/openstack-argocd/configs.git   
-      # istio-helm-repo:
-    #   url: https://storage.googleapis.com/istio-prerelease/daily-build/master-latest-daily/charts
-    #   name: istio.io
-    #   type: helm
