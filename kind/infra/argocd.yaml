@@ -5,14 +5,12 @@ configs:
   repositories:
     openstack-helm:
       url: https://github.com/openstack-argocd/openstack-helm-argocd.git
-      name: openstack-helm-argocd 
     openstack-helm-infra:
-      url: xxx
-      name: openstack-helm-argocd        
+      url: https://github.com/openstack/openstack-helm-infra.git     
     openstack-argocd:
       url: https://github.com/openstack-argocd/openstack-argocd.git
-      name: openstack-argocd
-      
+    configs:
+      url: https://github.com/openstack-argocd/configs.git   
       # istio-helm-repo:
     #   url: https://storage.googleapis.com/istio-prerelease/daily-build/master-latest-daily/charts
     #   name: istio.io
