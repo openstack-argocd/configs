@@ -11,9 +11,11 @@ spec:
     chart: argo/argo-cd
     helm:
       values: |
+        url: https://argocd.kind.local
         configs:
           cm:
             statusbadge: enabled
+            exec: enabled
         
           repositories:
             openstack-helm:
@@ -32,6 +34,7 @@ spec:
 
 configs:
   cm:
+    exec: enabled
     statusbadge: enabled
 
   repositories:
