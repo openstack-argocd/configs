@@ -1,1 +1,7 @@
-
+controller:
+  service:
+    type: loadbalancer
+  ingressClassRessource:
+    name: nginx
+  kind: DaemonSet
+    
