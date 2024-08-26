@@ -15,6 +15,10 @@ spec:
       - openstack.yaml
     values: |
       appRoot: true
+      targetRevision: dev
+      apps:
+        openstack:
+          dnsName: .kind.local
       
   destination:
     name: in-cluster
