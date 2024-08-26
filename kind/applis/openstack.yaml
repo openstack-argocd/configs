@@ -19,6 +19,13 @@ spec:
       apps:
         openstack:
           dnsSuffix: .kind.local
+          masterKey: yoto
+          barbican:
+           key: totoroto
+        openstack_users:
+          admin: toto
+          
+
       
   destination:
     name: in-cluster
