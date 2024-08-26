@@ -18,7 +18,7 @@ spec:
       targetRevision: dev
       apps:
         openstack:
-          dnsName: .kind.local
+          dnsSuffix: .kind.local
       
   destination:
     name: in-cluster
