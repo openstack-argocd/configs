@@ -1,1 +1,31 @@
-tesr
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openstack
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    targetRevision: HEAD
+    path: charts/applications
+  helm:
+    valueFiles:
+      - openstack.yaml
+    values: |
+      appRoot: true
+      targetRevision: dev
+      apps:
+        openstack:
+          dnsSuffix: .kind.local
+          masterKey: yoto
+          barbican:
+           key: totoroto
+        openstack_users:
+          admin: toto
+          
+
+      
+  destination:
+    name: in-cluster
+    namespace: argocd
