@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/argoproj/argocd-example-apps.git
     targetRevision: HEAD
-    path: charts/applications
+    path: kind/applis
   helm:
     valueFiles:
       - openstack.yaml
