@@ -8,23 +8,7 @@ spec:
   source:
     repoURL: https://github.com/openstack-argocd-configs
     targetRevision: HEAD
-    path: kind/applis
-  helm:
-    valueFiles:
-      - openstack.yaml
-    values: |
-      appRoot: true
-      targetRevision: dev
-      apps:
-        openstack:
-          dnsSuffix: .kind.local
-          masterKey: yoto
-          barbican:
-           key: totoroto
-        openstack_users:
-          admin: toto
-          
-
+    path: kind/applis        
       
   destination:
     name: in-cluster
